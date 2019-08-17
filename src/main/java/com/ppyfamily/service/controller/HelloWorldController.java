@@ -1,4 +1,4 @@
-package com.ppyfamily.service;
+package com.ppyfamily.service.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
