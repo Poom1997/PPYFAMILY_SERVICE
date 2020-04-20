@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.ppyfamily'
 version = '0.0.1-ALPHA'
-sourceCompatibility = '14'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
