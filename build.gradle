@@ -30,12 +30,3 @@ dependencies {
 bootRun {
 	systemProperties =  System.properties
 }
-
-sonarqube {
-	properties {
-		property "sonar.projectKey", "Poom1997_PPYFAMILY_SERVICE"
-		property "sonar.organization", "poom1997"
-		property "sonar.host.url", "https://sonarcloud.io"
-		property "sonar.login", "22b89eeadaaa8b48e26893ab5ebcf95a49b97df9"
-	}
-}
