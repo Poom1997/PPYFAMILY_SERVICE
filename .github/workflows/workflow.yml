@@ -4,9 +4,9 @@
 name: Build, Test, and Sonar
 on:
   push:
-    branches: [ master ]
+    branches: [ master, Release ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, Release ]
 
 jobs:
   build:
