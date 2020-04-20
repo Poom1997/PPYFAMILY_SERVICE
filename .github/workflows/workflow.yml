@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Gradle Build and Tests
+name: Build, Test, and Sonar
 on:
   push:
     branches: [ master ]
@@ -23,4 +23,7 @@ jobs:
     - name: Setup Gradle
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew 
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v1.1
+
