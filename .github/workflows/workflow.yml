@@ -23,7 +23,7 @@ jobs:
     - name: Setup Gradle
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew 
+      run: ./gradlew build
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.1
+      run: ./gradlew sonarqube
 
