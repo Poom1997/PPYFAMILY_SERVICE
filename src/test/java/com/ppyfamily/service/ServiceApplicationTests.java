@@ -10,10 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @ActiveProfiles("local")
 public class ServiceApplicationTests {
-
-	@Test
-	public void contextLoads() {
-
-	}
-
+  @Test
+  public void contextLoads() {
+  }
 }
