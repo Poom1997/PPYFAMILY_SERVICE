@@ -26,6 +26,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.Sonarqube_Token }}
         run: ./gradlew sonarqube
   Deploy:
+    needs: Tests
     environment:
       name: production
     name: Deploy
@@ -37,5 +38,5 @@ jobs:
           app-name: 'ppyfamily'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_f98e6b95513f4c87b2e2b33753bb5380 }}
-          package: '${{ github.workspace }}/target/*.jar'
+          package: '${{ github.workspace }}/build/libs/*.jar'
 
