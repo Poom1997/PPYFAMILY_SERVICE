@@ -24,8 +24,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew clean build
-    - name: Build JAR
-      run: ./gradlew bootJar
     - name: SonarQube
       env:
         GITHUB_TOKEN: ${{ secrets.Sonarqube_Github_Token }}
