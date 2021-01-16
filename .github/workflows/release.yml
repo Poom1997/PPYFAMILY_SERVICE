@@ -31,11 +31,15 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ppyfamily'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1247dcab84634dfcb828d9c4b2d52ab5 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f98e6b95513f4c87b2e2b33753bb5380 }}
           package: '${{ github.workspace }}/target/*.jar'
 
