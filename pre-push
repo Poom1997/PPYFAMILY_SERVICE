@@ -1,5 +1,0 @@
-#!/bin/sh
-echo "Running prepush"
-./gradlew check
-RESULT=$?
-exit $RESULT
