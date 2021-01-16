@@ -50,4 +50,4 @@ jobs:
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_f98e6b95513f4c87b2e2b33753bb5380 }}
           package: '${{ github.workspace }}/build/libs/*.jar'
       - name: Verifying Application Connectivity
-        run: curl -I http://ppyfamily.azurewebsites.net/actuator/health -f --retry 10 --retry-delay 10
+        run: curl -I http://ppyfamily.azurewebsites.net/actuator/health -f --retry 10 --retry-delay 10 --connect-timeout 30
