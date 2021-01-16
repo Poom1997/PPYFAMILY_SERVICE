@@ -25,6 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.Sonarqube_Github_Token }}
           SONAR_TOKEN: ${{ secrets.Sonarqube_Token }}
         run: ./gradlew sonarqube
+      - name: Build JAR
+        run: ./gradlew bootJar
   Deploy:
     needs: Tests
     environment:
