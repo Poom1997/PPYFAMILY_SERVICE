@@ -42,7 +42,7 @@ sonarqube {
 		property "sonar.projectKey", "Poom1997_PPYFAMILY_SERVICE"
 		property "sonar.organization", "poom1997"
 		property "sonar.host.url", "https://sonarcloud.io"
-		property "sonar.login", "73f85b657778ae6ad9e34098e2b3596cf653aca2"
+		property "sonar.login", ${SONARCLOUDTOKEN}
 	}
 }
 
