@@ -1,28 +1,57 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.7.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "org.sonarqube" version "3.1"
 	id 'java'
+	id 'checkstyle'
 }
 
 group = 'com.ppyfamily'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '12'
+version = '0.0.1-ALPHA'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	//Springboot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	//implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	//implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
-	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	//Logging
+	implementation 'org.slf4j:slf4j-api'
+
+	//Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.mockito:mockito-core'
+	testImplementation 'de.bwaldvogel:mongo-java-server:1.37.0'
+	testRuntime 'org.junit.jupiter:junit-jupiter-engine'
+
+	//Lombok
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 }
 
 bootRun {
 	systemProperties =  System.properties
+}
+
+sonarqube {
+	properties {
+		property "sonar.projectKey", "Poom1997_PPYFAMILY_SERVICE"
+		property "sonar.organization", "poom1997"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.login", "73f85b657778ae6ad9e34098e2b3596cf653aca2"
+	}
+}
+
+checkstyle {
+	toolVersion = "8.39"
+	ignoreFailures = false
+	maxWarnings = 0
+	maxErrors = 0
+	sourceSets = [sourceSets.main, sourceSets.test]
+	reportsDir = file("$project.buildDir/reports/checkstyle")
 }
