@@ -1,0 +1,4 @@
+gradlew check -q
+RESULT=$?
+git stash pop -q
+exit $RESULT
