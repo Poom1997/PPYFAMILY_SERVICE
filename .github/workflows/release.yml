@@ -40,8 +40,6 @@ jobs:
           java-version: 11.0.9
       - name: Setup Gradle
         run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
       - name: Build JAR
         run: ./gradlew bootJar
       - name: Deploy to Azure Web App
