@@ -5,8 +5,6 @@ name: Release
 on:
   push:
     branches: [ Release ]
-  pull_request:
-    branches: [ Release ]
 
 jobs:
   Tests:
