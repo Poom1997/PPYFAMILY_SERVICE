@@ -47,7 +47,7 @@ jobs:
         with:
           app-name: 'ppyfamily'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f98e6b95513f4c87b2e2b33753bb5380 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d91da74556db437ca1f7eece243553be }}
           package: '${{ github.workspace }}/build/libs/*.jar'
       - name: Verifying Application Connectivity
         run: curl -I http://ppyfamily.azurewebsites.net/actuator/health -f --retry 10 --retry-delay 10 --connect-timeout 30
