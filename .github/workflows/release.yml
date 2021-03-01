@@ -45,7 +45,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ppyfamily'
+          app-name: 'ppyfamilybe'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_d91da74556db437ca1f7eece243553be }}
           package: '${{ github.workspace }}/build/libs/*.jar'
